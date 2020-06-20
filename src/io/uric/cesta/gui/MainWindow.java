@@ -298,6 +298,7 @@ public class MainWindow{
                 RRegNomeField.setText("");
                 RRegDataField.setText("");
                 RRegQtdField.setText("");
+
             }
         });
 
@@ -320,6 +321,7 @@ public class MainWindow{
                     ADoaDataSpin.setValue(new Date());
                 }
                 ADoaCPFField.setText("");
+                atualizarListaDoadores();
             }
         });
         VDoaCPFCombo.addActionListener(new ActionListener() {
@@ -340,6 +342,7 @@ public class MainWindow{
                AltDoaDataSpin.setValue(localDateToDate(selectedDoador.getDataNascimento()));
                AltDoaTelField.setText(selectedDoador.getTelefone());
                DoaAlterarButton.setEnabled(true);
+               atualizarListaDoadores();
             }
         });
         DoaAlterarButton.addActionListener(new ActionListener() {
@@ -369,6 +372,7 @@ public class MainWindow{
                         .format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))); //Corrigir a exibição
                 RDoaTelField.setText(selectedDoador.getTelefone());
                 DoaRemoverButton.setEnabled(true);
+
             }
         });
         DoaRemoverButton.addActionListener(new ActionListener() {
@@ -382,6 +386,7 @@ public class MainWindow{
                 atualizarListaDoadores();
                 RDoaCPFCombo.setSelectedItem(0);
                 DoaRemoverButton.setEnabled(false);
+                atualizarListaDoadores();
             }
         });
         //Telas do Beneficiario
@@ -406,6 +411,7 @@ public class MainWindow{
                     ABenDataSpin.setValue(new Date());
                     ABenEndField.setText("");
                     ABenFamiliaSpin.setValue(1);
+                    atualizarListaBeneficiarios();
                 }
             }
         });
